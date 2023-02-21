@@ -1,0 +1,38 @@
+body {
+  margin: 5px 5px;
+  padding: 9px;
+  font-family: monospace;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+h2 {
+  font-size: 15 px;
+}
+p {
+  text-align: center;
+}
+.location {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.col-2 {
+  display: block;
+  margin: 0 auto;
+}
+.sunset {
+  margin: auto;
+  padding: 0;
+  display: center;
+}
+.border {
+  background-color: rgb(247, 244, 241);
+  border-color: black;
+}
+.card {
+  text-align: center;
+}
