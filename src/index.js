@@ -1,5 +1,5 @@
 let date = new Date();
-let h2 = document.querySelector("h2");
+let h2 = document.querySelector("#date");
 let hours = date.getHours();
 if (hours < 10) {
   hours = `0${hours}`;
