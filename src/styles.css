@@ -1,9 +1,34 @@
-h1,
-ul {
-  text-align: center;
+body {
+  font-family: "Times New Roman", Times, serif;
 }
-ul {
-  font-size: 15 px;
+.weather-shecodes {
+  max-width: 600px;
+  margin: 35px auto;
+  padding: 25px;
+  border: 1px solid #5aebf6;
+  border-radius: 15px;
+}
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 25px;
+  display: block;
+  color: rgb(91, 91, 104);
+}
+.top {
+  text-align: center;
+  font-size: 5 px;
+  font-family: "Times New Roman", Times, serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.temperature {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
 }
 p {
   text-align: center;
