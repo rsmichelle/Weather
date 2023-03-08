@@ -1,9 +1,11 @@
 body {
   font-family: "Times New Roman", Times, serif;
 }
-.weather-shecodes {
+.weather-shecodes-app {
   max-width: 600px;
   margin: 35px auto;
+}
+.weather-shecodes {
   padding: 25px;
   border: 1px solid #5aebf6;
   border-radius: 15px;
@@ -14,7 +16,8 @@ h1 {
   padding-top: 15px;
   font-size: 25px;
   display: block;
-  color: rgb(91, 91, 104);
+  color: rgb(80, 80, 175);
+  opacity: 90%;
 }
 .top {
   text-align: center;
@@ -23,32 +26,47 @@ h1 {
   list-style: none;
   margin: 0;
   padding: 0;
+  line-height: 18px;
 }
-.temperature {
+img {
+  width: 45px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+.weather-temperature {
   display: block;
   margin: 0 auto;
   text-align: center;
-  font-size: 18px;
+  font-size: px;
+  padding: 0;
 }
-p {
-  text-align: center;
+.weather-temperature #temperature {
+  font-size: 25px;
+  margin: 5px 2px 5px 5px;
+  margin-right: 0;
 }
-.location {
+.weather-temperature .units {
+  font-size: 10px;
+  margin-left: 0px;
+}
+.unitF {
+  text-decoration: none;
+}
+.weatherInfo {
+  list-style: none;
+  margin-left: 2px;
+  padding-left: 0%;
   display: block;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.col-2 {
-  display: block;
-  margin: 0 auto;
+  line-height: 15px;
 }
 .sunset {
+  text-align: right;
+  padding: 10px;
   margin: auto;
-  padding: 0;
-  display: center;
 }
 
-.card {
+p {
   text-align: center;
+  padding: 15px;
+  padding-bottom: 1px;
 }

@@ -20,6 +20,7 @@
   </head>
   <body>
     <div class="container">
+      <div class="weather-shecodes-app">
       <div class="weather-shecodes">
         <form id="search-form">
           <input class="searchbar" type="text" placeholder="Search for a city" id="searchInput"/>
@@ -35,20 +36,24 @@
                  Clear
                  </li>
                 </ul>
-             <div class="temperature">
-               <img src="src/sunnyday.png" alt="sun" width="75px">5 <small class="temp">°C| °F</small>  
+             <div class="temp">
+              <div class="d-felx weather-temperature">
+               <img src="src/sunnyday.png" alt="sun" id="icon"/><span>
+                <strong id="temperature">5°</strong><span class="units">°C| <a href="#" class="unitF">°F</a> </span> 
+               </span>
             </div>
+              </div>
             <div class="row">
              <div class="col-6">  
-               <ul>
+               <ul class="weatherInfo">
                 <li>
-                Precipitation: 3%
+                <strong id="precipitation">Precipitation:</strong> 3%
                  </li>
                 <li>
-                 Wind: 6km/h 
+                 <strong id="wind">Wind:</strong> 6km/h 
                 </li>
                 <li>
-                 Humadity: 81% 
+                 <strong id="humidity">Humidity:</strong> 81% 
                  </li>
                </ul>
              </div>
@@ -60,6 +65,7 @@
                   Sunrise 🌅 
                 </div>
             </div>
+            <div class="weatherLooks">
                <div class="row">
                 <div class="col-4">
                  <div class="card">
@@ -85,6 +91,7 @@
                 </div>
               </div>
             </div>
+          </div>
         
               <p id="forecast">Forecast <input type="date"></p>
               <div class="row">
@@ -128,8 +135,9 @@
              <div class="col-ms-3">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Friday</h5>
-                  <p class="card-text">❄️</p>
+                  <h5 class="card-title">Friday
+                  </h5>
+                <p class="card-text">❄️</p>
                   <div>L:-8° H:-1°</div>
                 </div>
               </div>
@@ -151,9 +159,10 @@
               </div>
       </div>
       <small>
-        <a href="https://github.com/rsmichelle/Weather">Open Source</a>
+        <a href="https://github.com/rsmichelle/Weather" >Open Source</a>
         by Michelle Rodriguez
       </small> 
+              </div>
       </div> 
     <script src="src/index.js"></script>
   </body>
