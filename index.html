@@ -23,8 +23,8 @@
       <div class="weather-shecodes-app">
       <div class="weather-shecodes">
         <form id="search-form">
-          <input class="searchbar" type="text" placeholder="Search for a city" id="searchInput"/>
-           <input class="searchbutton" type="submit" value="Search" id="searchButton"/>
+         <input class="searchbar" type="text" placeholder="Search for a city" id="searchInput"/>
+         <input class="searchbutton" type="submit" value="Search" id="searchButton"/>
         </form>
                <h1 
                  id="city">Denver
@@ -39,7 +39,7 @@
              <div class="temp">
               <div class="d-felx weather-temperature">
                <img src="src/sunnyday.png" alt="sun" id="icon"/><span>
-                <strong id="temperature">5°</strong><span class="units">°C| <a href="#" class="unitF">°F</a> </span> 
+                <strong id="temperature">5°</strong><span class="units">°C | <a href="#" class="unitF">°F</a> </span> 
                </span>
             </div>
               </div>
@@ -58,112 +58,114 @@
                </ul>
              </div>
                <div class="col-6">
-                <div class="Sunset">
-                  Sunset 🌇
-                </div>
-                <div class="Sunrise">
-                  Sunrise 🌅 
-                </div>
+                <div class="viewtimes">
+                <div class="sunrise">Sunrise 🌅 06:30 </div>
+                <div class="sunset">Sunset 🌇 5:58</div>
+                
+              </div>
             </div>
             <div class="weatherLooks">
-               <div class="row">
-                <div class="col-4">
-                 <div class="card">
-                <div class="card-visibilty">
-                  <h5 class="card-title"> 👁️‍🗨️ Visibility</h5>
-                  <p class="card-text">10 mi</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card">
-                <div class="card-feels">
-                  <h5 class="card-title">🌡️Feels like</h5>
-                  <p class="card-text">1°</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card">
-                <div class="card-UV">
-                  <h5 class="card-title"> UV Index</h5>
-                  <p class="card-text"> 1 low</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-              <p id="forecast">Forecast <input type="date"></p>
               <div class="row">
-             <div class="col-ms-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Monday
-                  </h5>
-                  <p class="card-text">⛅</p>
-                  <div>L:-2° H:8°</div>
-                </div>
+                <div class="col-4">
+                  <div class="card">
+                   <div class="card-visibilty">
+                     <h5 class="card-title"> 👁️‍🗨️ Visibility</h5>
+                     <p class="card-text">10 mi</p>
+                   </div>
+                 </div>
+               </div>
+                <div class="col-4">
+                  <div class="card">
+                    <div class="card-feels">
+                     <h5 class="card-title">🌡️Feels like</h5>
+                     <p class="card-text">1°</p>
+                   </div>
+                  </div>
+               </div>
+                <div class="col-4"> 
+                   <div class="card">
+                    <div class="card-UV">
+                      <h5 class="card-title"> UV Index</h5>
+                      <p class="card-text"> 1 low</p>
+                   </div>
+                 </div>
+               </div>
               </div>
-             </div>
-             <div class="col-ms-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tuesday</h5>
-                  <p class="card-text">❄️</p>
-                  <div>L:-5° H:3°</div>
-                </div>
+            </div>  
+            <p id="forecast">Forecast <input type="date"></p>
+            <div class="daysWeather">
+              <div class="row">
+                <div class="col-ms-3">
+                  <div class="card">
+                    <div class="card-body">
+                     <strong class="card-titleDays">Monday</strong>
+                     <span class="card-text">⛅</span>
+                     <span>L:-2° H:8°</span>
+                    </div>
+                 </div>
+               </div>
+               <div class="col-ms-3">
+                 <div class="card">
+                   <div class="card-body">
+                     <strong class="card-titleDays">Tuesday</strong>
+                     <span class="card-text">❄️</span>
+                     <span>L:-5° H:3°</span>
+                   </div>
+                 </div>
+               </div>
+                <div class="col-ms-3">
+                  <div class="card">
+                    <div class="card-body">
+                     <strong class="card-titleDays">Wednesday</strong>
+                     <span class="card-text">❄️</span>
+                     <span>L:-7° H:0°</span>
+                    </div>
+                 </div>
+               </div>
+               <div class="col-ms-3">
+                  <div class="card">
+                    <div class="card-body">
+                     <strong class="card-titleDays">Thursday</strong>
+                     <span class="card-text">⛅</span>
+                     <span>L:-10° H:2°</span>
+                   </div>
+                 </div>
+               </div>
+               <div class="col-ms-3">
+                  <div class="card">
+                    <div class="card-body">
+                     <strong class="card-titleDays">Friday</strong>
+                     <span class="card-text">❄️</span>
+                     <span>L:-8° H:-1°</span>
+                   </div>
+                 </div>
+               </div>
+               <div class="col-ms-3">
+                  <div class="card">
+                    <div class="card-body">
+                     <strong class="card-titleDays">Saturday</strong>
+                     <span class="card-text">❄️</span>
+                     <span>L:-8° H:-1°</span>
+                   </div>
+                 </div>
+               </div>
+               <div class="col-ms-3">
+                  <div class="card">
+                    <div class="card-body">
+                     <strong class="card-titleDays">Sunday</strong>
+                     <span class="card-text">❄️</span>
+                     <span>L:-8° H:-1°</span>
+                   </div>
+                 </div>
+               </div>
               </div>
-             </div>
-             <div class="col-ms-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Wednesday</h5>
-                  <p class="card-text">❄️</p>
-                  <div>L:-7° H:0°</div>
-                </div>
-              </div>
-             </div>
-             <div class="col-ms-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Thursday</h5>
-                  <p class="card-text">⛅</p>
-                  <div>L:-10° H:2°</div>
-                </div>
-              </div>
-             </div>
-             <div class="col-ms-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Friday
-                  </h5>
-                <p class="card-text">❄️</p>
-                  <div>L:-8° H:-1°</div>
-                </div>
-              </div>
-              <div class="col-ms-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Saturday</h5>
-                  <p class="card-text">❄️</p>
-                  <div>L:-8° H:-1°</div>
-                </div>
-              </div>
-              <div class="col-ms-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Sunday</h5>
-                  <p class="card-text">❄️</p>
-                  <div>L:-8° H:-1°</div>
-                </div>
-              </div>
-      </div>
+            </div>
+         </div>
+    </div> 
       <small>
-        <a href="https://github.com/rsmichelle/Weather" >Open Source</a>
+        <a class="openSource" href="https://github.com/rsmichelle/Weather" >Open Source</a>
         by Michelle Rodriguez
-      </small> 
-              </div>
-      </div> 
+      </small>
     <script src="src/index.js"></script>
   </body>
 </html>

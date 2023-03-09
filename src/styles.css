@@ -9,6 +9,12 @@ body {
   padding: 25px;
   border: 1px solid #5aebf6;
   border-radius: 15px;
+  background: rgba(132, 106, 150, 0.741);
+  background: linear-gradient(
+    365deg,
+    rgb(176, 152, 232) 23%,
+    rgb(90, 90, 162) 100%
+  );
 }
 h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -16,12 +22,12 @@ h1 {
   padding-top: 15px;
   font-size: 25px;
   display: block;
-  color: rgb(80, 80, 175);
+  color: rgb(15, 13, 14);
   opacity: 90%;
 }
 .top {
   text-align: center;
-  font-size: 5 px;
+  font-size: 13px;
   font-family: "Times New Roman", Times, serif;
   list-style: none;
   margin: 0;
@@ -37,7 +43,7 @@ img {
   display: block;
   margin: 0 auto;
   text-align: center;
-  font-size: px;
+
   padding: 0;
 }
 .weather-temperature #temperature {
@@ -57,16 +63,47 @@ img {
   margin-left: 2px;
   padding-left: 0%;
   display: block;
-  line-height: 15px;
+  line-height: 20px;
+  font-size: 13px;
 }
-.sunset {
+.viewtimes {
   text-align: right;
-  padding: 10px;
-  margin: auto;
+  line-height: 20px;
+  font-size: 13px;
 }
 
-p {
+#precipitation,
+#wind,
+#humidity {
+  opacity: 68%;
+}
+.weatherLooks {
   text-align: center;
-  padding: 15px;
-  padding-bottom: 1px;
+  line-height: 10px;
+  font-size: 12px;
+  padding: 0;
+  margin: auto;
+  padding-bottom: 15px;
+}
+.card-title {
+  font-size: 13px;
+  font-weight: bold;
+  opacity: 85%;
+}
+#forecast {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.daysWeather {
+  text-align: center;
+  font-size: 12px;
+  line-height: 5px;
+  width: 40%;
+  margin: auto;
+  padding: 10px;
+}
+.openSource {
+  text-decoration: none;
 }
