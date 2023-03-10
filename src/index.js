@@ -20,17 +20,7 @@ let days = [
 ];
 let day = days[dayIndex];
 h2.innerHTML = `${day}, ${hours}:${minutes}`;
-
-function search(event) {
-  event.preventDefault();
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let searchCity = document.querySelector("#searchInput").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(showTemp);
-}
 function showTemp(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
 
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -50,6 +40,17 @@ function showTemp(response) {
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
 }
+function search(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
+  axios.get(apiUrl).then(showTemp);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#searchInput");
+  search(cityInputElement.value);
+}
+search("denver");
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
