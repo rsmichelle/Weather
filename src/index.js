@@ -43,6 +43,13 @@ function showTemp(response) {
     response.data.wind.speed
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
