@@ -30,8 +30,19 @@ function search(event) {
   axios.get(apiUrl).then(showTemp);
 }
 function showTemp(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = response.data.main.temp;
+
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);

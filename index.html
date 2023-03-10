@@ -10,13 +10,14 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script
+      src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link href="src/styles.css" rel="stylesheet" 
     />
+    
     <title>Weather App
     </title>
-    <script
-      src="https://unpkg.com/axios@1.1.2/dist/axios.min.js">
-    </script>
+    
   </head>
   <body>
     <div class="container">
@@ -26,15 +27,11 @@
          <input class="searchbar" type="text" placeholder="Search for a city" id="searchInput"/>
          <input class="searchbutton" type="submit" value="Search" id="searchButton"/>
         </form>
-               <h1 
-                 id="city">Denver
-                </h1>
+               <h1 id="city"></h1>
                <ul class="top">
                  <li id="date">date
                  </li>
-                 <li>
-                 Clear
-                 </li>
+                 <li id="description"></li>
                 </ul>
              <div class="temp">
               <div class="d-felx weather-temperature">
@@ -47,20 +44,17 @@
              <div class="col-6">  
                <ul class="weatherInfo">
                 <li>
-                <strong id="precipitation">Precipitation:</strong> 3%
-                 </li>
-                <li>
-                 <strong id="wind">Wind:</strong> 6km/h 
+                 <strong>Wind:</strong> <span id="wind"></span> km/h
                 </li>
                 <li>
-                 <strong id="humidity">Humidity:</strong> 81% 
+                 <strong>Humidity:</strong> <span id="humidity"></span>%
                  </li>
                </ul>
              </div>
                <div class="col-6">
                 <div class="viewtimes">
-                <div class="sunrise">Sunrise 🌅 06:30 </div>
-                <div class="sunset">Sunset 🌇 5:58</div>
+                <div id="sunrise">Sunrise 🌅 06:30 </div>
+                <div id="sunset">Sunset 🌇 5:58</div>
                 
               </div>
             </div>

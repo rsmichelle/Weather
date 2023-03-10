@@ -33,6 +33,7 @@ h1 {
   margin: 0;
   padding: 0;
   line-height: 18px;
+  text-transform: capitalize;
 }
 img {
   width: 45px;
@@ -70,12 +71,6 @@ img {
   text-align: right;
   line-height: 20px;
   font-size: 13px;
-}
-
-#precipitation,
-#wind,
-#humidity {
-  opacity: 68%;
 }
 .weatherLooks {
   text-align: center;
