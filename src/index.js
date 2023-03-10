@@ -21,6 +21,7 @@ let days = [
 let day = days[dayIndex];
 h2.innerHTML = `${day}, ${hours}:${minutes}`;
 function showTemp(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
 
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -39,6 +40,13 @@ function showTemp(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+  document.querySelector("#feelsLike").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+  document.querySelector("#visibility").innerHTML = Math.round(
+    response.data.visibility / 1000
+  );
+  celsiusTemp = response.data.main.temp;
 }
 function search(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -51,6 +59,31 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#searchInput");
   search(cityInputElement.value);
 }
-search("denver");
+function showFahrenheitUnit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+function showCelsiusUnit(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitUnit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusUnit);
+
+search("denver");

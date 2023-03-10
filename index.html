@@ -36,7 +36,9 @@
              <div class="temp">
               <div class="d-felx weather-temperature">
                <img src="src/sunnyday.png" alt="sun" id="icon"/><span>
-                <strong id="temperature">5°</strong><span class="units">°C | <a href="#" class="unitF">°F</a> </span> 
+                <strong id="temperature"></strong>
+                <span class="units">
+                  <a href="#" id="celsius" class="active">°C</a> | <a href="#" id="fahrenheit" class="active">°F</a>
                </span>
             </div>
               </div>
@@ -60,29 +62,21 @@
             </div>
             <div class="weatherLooks">
               <div class="row">
-                <div class="col-4">
+                <div class="col-6">
                   <div class="card">
                    <div class="card-visibilty">
                      <h5 class="card-title"> 👁️‍🗨️ Visibility</h5>
-                     <p class="card-text">10 mi</p>
+                     <span class="card-text" id="visibility"></span>mi
                    </div>
                  </div>
                </div>
-                <div class="col-4">
+                <div class="col-6">
                   <div class="card">
                     <div class="card-feels">
                      <h5 class="card-title">🌡️Feels like</h5>
-                     <p class="card-text">1°</p>
+                     <span class="card-text" id="feelsLike"></span>°
                    </div>
                   </div>
-               </div>
-                <div class="col-4"> 
-                   <div class="card">
-                    <div class="card-UV">
-                      <h5 class="card-title"> UV Index</h5>
-                      <p class="card-text"> 1 low</p>
-                   </div>
-                 </div>
                </div>
               </div>
             </div>  
