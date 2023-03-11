@@ -1,29 +1,39 @@
-let date = new Date();
-let h2 = document.querySelector("#date");
-let hours = date.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+function formatDate(times) {
+  let date = new Date(times);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let dayIndex = days[date.getDay()];
+  return `${dayIndex}, ${hours}:${minutes}`;
 }
-let minutes = date.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let dayIndex = date.getDay();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[dayIndex];
-h2.innerHTML = `${day}, ${hours}:${minutes}`;
+
 function showTemp(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
-
+  document.querySelector("#date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+  document.querySelector("#sunset").innerHTML = formatDate(
+    response.data.sys.sunset * 1000
+  );
+  document.querySelector("#sunrise").innerHTML = formatDate(
+    response.data.sys.sunrise * 1000
+  );
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -48,6 +58,7 @@ function showTemp(response) {
   );
   celsiusTemp = response.data.main.temp;
 }
+
 function search(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -62,15 +73,15 @@ function handleSubmit(event) {
 function showFahrenheitUnit(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
 function showCelsiusUnit(event) {
   event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
