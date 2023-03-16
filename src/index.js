@@ -21,6 +21,39 @@ function formatDate(times) {
   let dayIndex = days[date.getDay()];
   return `${dayIndex}, ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = [
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `;
+    <div class="col-ms-3">
+      <div class="card">
+        <div class="card-body">
+          <strong class="card-titleDays">${day}</strong>
+          <span class="card-text">⛅</span>
+          <span id="tempDay">
+            <strong>L:-2°</strong> H:8°
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function showTemp(response) {
   console.log(response.data);
@@ -96,5 +129,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitUnit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusUnit);
-
+displayForecast();
 search("denver");
