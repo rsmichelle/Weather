@@ -21,7 +21,8 @@ function formatDate(times) {
   let dayIndex = days[date.getDay()];
   return `${dayIndex}, ${hours}:${minutes}`;
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
   let days = [
@@ -54,13 +55,17 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "5293d8454b519c30f6f6331f38c85b4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
+  axios.get(apiUrl).then(displayForecast);
+}
 function showTemp(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#date").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   document.querySelector("#sunset").innerHTML = formatDate(
     response.data.sys.sunset * 1000
   );
@@ -90,10 +95,11 @@ function showTemp(response) {
     response.data.visibility / 1000
   );
   celsiusTemp = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 
 function search(city) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiKey = "5293d8454b519c30f6f6331f38c85b4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTemp);
@@ -129,5 +135,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitUnit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusUnit);
-displayForecast();
+
 search("denver");
