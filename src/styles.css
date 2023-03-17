@@ -9,11 +9,8 @@ body {
   padding: 25px;
   border: 1px solid #5aebf6;
   border-radius: 15px;
-  background: rgba(199, 166, 223, 0.741);
-  background: linear-gradient(
-    365deg,
-    rgb(112, 112, 225) 100% rgb(176, 152, 232) 23%
-  );
+  background: rgba(190, 154, 212, 0.741);
+  background: gradient(3150deg, rgb(31, 31, 230) 100% rgb(92, 77, 128) 23%);
 }
 h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -65,6 +62,7 @@ img {
   line-height: 20px;
   font-size: 13px;
 }
+
 .viewtimes {
   text-align: right;
   line-height: 20px;
@@ -90,13 +88,19 @@ img {
   font-size: 14px;
   font-weight: bold;
 }
+
 .daysWeather {
+  display: block;
   text-align: center;
   font-size: 12px;
   line-height: 5px;
-  width: 40%;
   margin: auto;
-  padding: 10px;
+  padding: 0%;
+}
+.card-body {
+  text-align: center;
+  font-size: 10px;
+  margin: auto;
 }
 .openSource {
   text-decoration: none;
