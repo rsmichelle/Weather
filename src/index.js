@@ -39,9 +39,8 @@ function displayForecast(response) {
         forecastHTML +
         `
     <div class="col-2">
-      <span class="card">
-        <div class="card-body">
-          <strong class="card-titleDays">${formatDays(forecastDay.dt)}</strong>
+        <div class="body">
+          <strong class="titleDays">${formatDays(forecastDay.dt)}</strong>
           <span class="card-text">
           <img class="iconDay" src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
@@ -52,10 +51,8 @@ function displayForecast(response) {
             <strong>${Math.round(forecastDay.temp.min)}°</strong> ${Math.round(
           forecastDay.temp.max
         )}°
-          </div>
-        </div>
-      </span>
-    </span>
+         </div>
+     </div>
   </div>`;
     }
   });
@@ -117,31 +114,8 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#searchInput");
   search(cityInputElement.value);
 }
-function showFahrenheitUnit(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-}
-function showCelsiusUnit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(celsiusTemp);
-}
-
-let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", showFahrenheitUnit);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", showCelsiusUnit);
 
 search("denver");
