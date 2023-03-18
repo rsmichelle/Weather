@@ -6,7 +6,7 @@ body {
   margin: 35px auto;
 }
 .weather-shecodes {
-  padding: 25px;
+  padding: 10px;
   border: 1px solid #5aebf6;
   border-radius: 15px;
   background: rgba(190, 154, 212, 0.741);
@@ -83,7 +83,6 @@ img {
   opacity: 85%;
 }
 #forecast {
-  display: block;
   text-align: center;
   font-size: 14px;
   font-weight: bold;

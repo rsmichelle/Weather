@@ -41,16 +41,17 @@ function displayForecast(response) {
     <div class="col-2">
         <div class="body">
           <strong class="titleDays">${formatDays(forecastDay.dt)}</strong>
-          <span class="card-text">
           <img class="iconDay" src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"
           width="42"
-          </span>
-          <div id="tempDay">
-            <strong>${Math.round(forecastDay.temp.min)}°</strong> ${Math.round(
+          />
+          <div class="weatherForecastTempMin">
+            <strong>${Math.round(
+              forecastDay.temp.min
+            )}°</strong> <span class="weatherForecastTempMax">${Math.round(
           forecastDay.temp.max
-        )}°
+        )}°</span>
          </div>
      </div>
   </div>`;
